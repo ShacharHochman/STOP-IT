@@ -109,6 +109,7 @@ server <- function(input, output) {
       goRT.max <- max(go.resp.trials()$rt)
       goRT.adj <- ifelse(go()$response == "undefined", goRT.max, go()$rt)
       nth <- as.vector(round(quantile(goRT.adj, probs = presp, type = 6)))
+      print(nth)
 
       go.correct.trials <- reactive({subset(go(), go()$correct %in% c("true", "TRUE"))})
       goRT_correct <- round(mean(go.correct.trials()$rt))
