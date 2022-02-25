@@ -89,7 +89,8 @@ server <- function(input, output) {
 
       tmp <- ifelse(stopsignal()$response == "undefined", 0, 1)
       presp <- mean(tmp)
-      ssd <- mean(stopsignal()$SSD, na.rm = T)
+      print(stiosignal())
+      ssd <- mean(stopsignal()$SSD)
 
       stopsignal.resp.trials <- reactive({subset(stopsignal(), stopsignal()$response != "undefined")})
       usRTtmp <- stopsignal.resp.trials()$rt 
