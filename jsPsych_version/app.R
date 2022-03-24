@@ -1,5 +1,5 @@
 library(shiny)
-
+options(shiny.maxRequestSize=30*1024^2)
 ui <- fluidPage(
   titlePanel("SSRT estimator"),
   fluidRow(
