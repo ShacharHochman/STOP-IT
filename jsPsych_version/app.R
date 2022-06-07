@@ -106,7 +106,7 @@ server <- function(input, output) {
       goRT_all <- round(mean(goRTtmp))
       goRT_sd <- round(sd(goRTtmp))
 
-      goRT.max <- max(go.resp.trials()$rt)
+      goRT.max <- max(as.numeric(go.resp.trials()$rt))
       goRT.adj <- ifelse(go()$response == "undefined", goRT.max, go()$rt)
       nth <- as.vector(round(quantile(goRT.adj, probs = presp, type = 6)))
 
